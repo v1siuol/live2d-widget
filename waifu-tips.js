@@ -190,7 +190,6 @@ function loadWidget(config) {
 	}
 
 	function showMessage(text, timeout, priority) {
-		// todo waifuMessageEnabled
 		if (!live2d_settings.waifuMessageEnabled) return;
 		if (!text || (sessionStorage.getItem("waifu-text") && sessionStorage.getItem("waifu-text") > priority)) return;
 		if (messageTimer) {
@@ -340,10 +339,10 @@ function initWidget(config, apiPath) {
 	}
 }
 
-// function previewWidgetModel(modelId, modelTexturesId) {
-// 	apiPath = "https://live2d.fghrsh.net/api/";
-// 	loadlive2d("live2d", `${apiPath}get/?id=${modelId}-${modelTexturesId}`);
-// 	localStorage.setItem("modelId", modelId);
-// 	localStorage.setItem("modelTexturesId", modelTexturesId);
-// 	console.log(`Live2D 模型 ${modelId}-${modelTexturesId} 加载完成`);
-// }
+function previewWidgetModel(modelId, modelTexturesId) {
+	apiPath = "https://live2d.fghrsh.net/api/";
+	loadlive2d("live2d", `${apiPath}get/?id=${modelId}-${modelTexturesId}`);
+	localStorage.setItem("modelId", modelId);
+	localStorage.setItem("modelTexturesId", modelTexturesId);
+	console.log(`Live2D 模型 ${modelId}-${modelTexturesId} 加载完成`);
+}
